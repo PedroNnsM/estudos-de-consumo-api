@@ -37,6 +37,12 @@ let author = "Pedro Nunes";
 
 // delete request (DELETE é para deletar)
 
-app.route('/:indentificador').delete((req, res) => {
-    res.send(req.params.indentificador)
-});
+// app.route('/:indentificador').delete((req, res) => {
+//     res.send(req.params.indentificador)
+// });
+
+    app.route('/').post((req, res) => {
+        const { nome, cidade, idade } = req.body
+        res.send(`Ola, meu nome e ${nome}, sou morador de  ${cidade} e tenho ${idade} de idade`)
+    }
+);
