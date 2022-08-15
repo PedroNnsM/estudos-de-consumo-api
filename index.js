@@ -15,8 +15,28 @@ app.listen('3000');
 //     res.send('Hello World sobre, vai que nao tem nada')
 // } );
 
-// middleware 
+// Post request
 
-app.use( express.json() );
+// middleware (funcao que vai ser executada antes de qualquer rota)
 
-app.route('/').post( (req, res) =>  res.send(req.body) );
+ app.use( express.json() );
+
+// app.route('/').post( (req, res) =>  res.send(req.body) );
+
+// put request (PUT é para atualizar)
+
+let author = "Pedro Nunes";
+
+// app.route('/').get((req, res) => res.send(author)
+// );
+
+// app.route('/').put((req, res) => {
+//     author = req.body.author;
+//     res.send(author);
+// })
+
+// delete request (DELETE é para deletar)
+
+app.route('/:indentificador').delete((req, res) => {
+    res.send(req.params.indentificador)
+});
